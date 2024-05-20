@@ -37,6 +37,11 @@
         <div class="row">
           <div class="col-lg-10">
             <div class="main-navigation">
+              <div id="logoOn" class="offMovil">
+                <a href="index.html">
+                  <img src="./img/logoCull.png" height="90" alt="Logo" />
+                </a>
+              </div>
               <nav class="header-menu">
                 <ul class="menu food-nav-menu">
                   <li><a href="#home">Home</a></li>
@@ -56,9 +61,9 @@
                       <li><a href="#multimedia">Multimedia & Sonido</a></li>
                     </ul>
                   </li>
-                  <li class="header-logo-middle">
+                  <li id="logoOff" class="header-logo-middle offOn" >
                     <a href="index.html">
-                      <img src="./img/logoCull.png" height="90" alt="Logo" />
+                      <img src="./img/logoCull.png" alt="Logo" />
                     </a>
                   </li>
                   <li><a href="#gallery">Bautismos</a></li>
@@ -66,9 +71,16 @@
                   <li><a href="#contact">Contacto</a></li>
                 </ul>
               </nav>
+
               <div class="header-right">
                 <button id="darkModeToggle" class="header-btn">
                   <i class="fa-solid fa-cross"></i>
+                </button>
+              </div>
+
+              <div class="show-menu">
+                <button id="menuToggle" class="header-btn-menu">
+                  <i class="fas fa-bars"></i>
                 </button>
               </div>
             </div>

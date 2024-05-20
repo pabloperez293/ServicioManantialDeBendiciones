@@ -1,13 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+:root {
+  --primary-color: #4c9141;
+  /* Color primario */
+  --dark-bg: #1c1c1c;
+  /* Color de fondo oscuro */
+  --light-text: #f5f5f5;
+  /* Texto claro */
+  --font-family-sans: 'Open Sans', sans-serif;
+  /* Fuente principal */
+  --font-family-serif: 'Roboto', sans-serif;
+  /* Fuente secundaria */
+  --font-size-normal: 16px;
+  /* Tamaño de fuente normal */
+}
+
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-family-sans);
   text-rendering: optimizeLegibility !important;
-  background: #f3f3f5;
+  background: var(--light-bg);
+  color: var(--dark-text);
 }
 
 .body-fixed {
@@ -174,7 +193,7 @@ ul {
 .main-navigation .menu li a:hover,
 .main-navigation .menu li .active-menu,
 .main-navigation .menu .sub-menu li .active-sub-menu {
-  color: #4c9141;
+  color: var(--primary-color);
   background: #f3f3f5;
   box-shadow: inset 8px 8px 12px #e2e2e2, inset -8px -8px 12px #ffffff;
 }
@@ -197,23 +216,7 @@ ul {
   transition: 0.3s;
   box-shadow: inset 6px 6px 7px #dadada, inset -6px -6px 7px #ffffff;
   align-items: center;
-  color: #4c9141;
-}
-
-.cart-number {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: #ffffff;
-  font-size: 12px;
-  border: 1px solid #bfbfbf;
-  color: #ff8243;
+  color: var(--primary-color);
 }
 
 .header-btn:hover {
@@ -223,13 +226,12 @@ ul {
 
 /* Modo dark */
 .header-btn i {
-  color: #4c9141;
-  /* o el color que prefieras */
+  color: var(--primary-color);
 }
 
 body.dark-mode {
-  background: #1c1c1c;
-  color: #f5f5f5;
+  background: var(--dark-bg);
+  color: var(--light-text);
 }
 
 .dark-mode .site-header {
@@ -249,7 +251,7 @@ body.dark-mode {
 }
 
 .dark-mode .main-navigation .menu li a:hover {
-  background-color: rgb(87, 185, 112);
+  background-color: var(--primary-color);
 }
 
 .dark-mode .header-btn {
@@ -257,7 +259,85 @@ body.dark-mode {
 }
 
 body.dark-mode .header-btn i {
-  color: #4c9141;
+  color: var(--primary-color);
 }
 
 /* ---------------------- */
+.show-menu {
+  display: none;
+}
+.offMovil{
+  display: none;
+}
+.offOn {
+  display: none; 
+}
+/* Responsive */
+@media screen and (max-width: 767px) {
+  .header-menu {
+    display: none;
+  }
+  .logoOff{
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .main-navigation .menu li.header-logo-middle {
+    display: none; 
+  }
+  .header-menu.show-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 10px); /* Alinea el menú debajo del botón de menú */
+    right: 0;
+    background-color: #fff;
+    width: 200px; /* Ancho del menú desplegable */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .header-menu.show-menu li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .main-navigation .menu{
+    display: flow;
+  }
+
+  .header-btn-menu {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 20px;
+    transition: 0.3s;
+    box-shadow: inset 6px 6px 7px #dadada, inset -6px -6px 7px #ffffff;
+    align-items: center;
+    color: var(--primary-color);
+  }
+
+  .header-menu-button {
+    margin-left: 0;
+  }
+
+  .header-btn-menu {
+    display: inline-block;
+  }
+
+  .show-menu {
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .menu li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
