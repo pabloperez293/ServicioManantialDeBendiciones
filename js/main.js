@@ -28,7 +28,7 @@ window.addEventListener("resize", function() {
 });
 
 function handleChange(){
-  if (window.innerWidth < 766){
+  if (window.innerWidth <= 766){
     logoOff.classList.add("offOn");
   }else{
     logoOff.classList.remove("offOn");

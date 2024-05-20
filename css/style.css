@@ -274,6 +274,7 @@ body.dark-mode .header-btn i {
 }
 /* Responsive */
 @media screen and (max-width: 767px) {
+  /* imagenes que no se ven */
   .header-menu {
     display: none;
   }
@@ -284,8 +285,27 @@ body.dark-mode .header-btn i {
     display: none;
   }
   .main-navigation .menu li.header-logo-middle {
-    display: none; 
+    display: block; 
   }
+  /* --------------- */
+  /* Modo oscuro para el menú desplegable */
+.dark-mode .header-menu.show-menu {
+  background-color: #333; /* Fondo oscuro */
+  color: #f5f5f5; /* Texto claro */
+}
+
+.dark-mode .header-menu.show-menu li {
+  color: #f5f5f5; /* Texto claro */
+}
+
+.dark-mode .header-menu.show-menu li a {
+  color: #f5f5f5; /* Texto claro */
+}
+
+.dark-mode .header-menu.show-menu li a:hover {
+  background-color: #555; /* Fondo un poco más claro al hacer hover */
+  color: #fff; /* Texto blanco */
+}
   .header-menu.show-menu {
     display: flex;
     flex-direction: column;
